@@ -4,7 +4,69 @@
   box-sizing: border-box;
 }
 
-th {
-  border-style: solid 2px;
+body {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  align-items: center;
+}
+
+table th {
+  border-style: solid;
   border-color: black;
+  border-width: 1px;
+  margin: 0;
+  padding: 5px;
+}
+
+.container-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.container-tabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  max-width: 80%;
+  margin: auto;
+}
+
+.input-group {
+  display: flex;
+  padding: 10px;
+  margin: 2px;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 500px;
+  border: black 1px;
+  border-style: solid;
+}
+
+label {
+  flex: 1;
+  max-width: 50%;
+  padding: 10px;
+  margin-right: 10px;
+  text-align: left;
+}
+
+input [type="text"] {
+  flex: 2;
+  width: 800px;
+  box-sizing: border-box;
 }
