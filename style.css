@@ -3,3 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+th {
+  border-style: solid 2px;
+  border-color: black;
+}
