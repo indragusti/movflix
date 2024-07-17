@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MOVLIX</title>
 
-    <!-- Fonts -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOVLIX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <h1 center>Welcome to Movlix</h1>
-    <div class="container-input">
-      <div class="input-group">
-        <label for="">Judul Film</label>
-        <input type="text" name="" id="" />
-      </div>
-      <div class="input-group">
-        <label for="">Kategori Film</label>
-        <input type="text" name="" id="" />
-      </div>
-      <div class="input-group">
-        <label for="">Trailer</label>
-        <input type="text" name="" id="" />
-      </div>
-      <div class="input-group">
-        <label for="">Batasan Umur</label>
-        <input type="number" name="" id="" />
-      </div>
-      <div class="input-group">
-        <label for="">Sinopsis</label>
-        <input type="text" name="" id="" />
-      </div>
-      <div class="input-group">
-        <label for="">Link Gambar</label>
-        <input type="text" name="" id="" />
-      </div>
-      <div class="tombol-group">
-        <button>tambah</button>
-        <button style="display: none">update</button>
-      </div>
+<body>
+  <h1 center>Welcome to Movlix</h1>
+  <div class="container-input">
+    <div class="input-group">
+      <label for="judulFilm">Judul Film</label>
+      <input type="text" name="judulFilm" id="judulFilm" />
     </div>
-    <div class="container-tabel">
-      <table>
-        <thead>
-          <tr>
-            <th>Judul Film</th>
-            <th>Gambar Film</th>
-            <th>Kategori Film</th>
-            <th>Trailer Film</th>
-            <th>Batasan Umur</th>
-            <th>Sinopsis Film</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+    <div class="input-group">
+      <label for="kategoriFilm">Kategori Film</label>
+      <input type="text" name="kategoriFilm" id="kategoriFilm" />
     </div>
-  </body>
+    <div class="input-group">
+      <label for="trailerFilm">Trailer</label>
+      <input type="text" name="trailerFilm" id="trailerFilm" />
+    </div>
+    <div class="input-group">
+      <label for="batasanUmur">Batasan Umur</label>
+      <input type="number" name="batasanUmur" id="batasanUmur" />
+    </div>
+    <div class="input-group">
+      <label for="sinopsisFilm">Sinopsis</label>
+      <input type="text" name="sinopsisFilm" id="sinopsisFilm" />
+    </div>
+    <div class="input-group">
+      <label for="linkGambar">Link Gambar</label>
+      <input type="text" name="linkGambar" id="linkGambar" />
+    </div>
+    <div class="tombol-group">
+      <button>Tambah</button>
+      <button style="display: none">Update</button>
+    </div>
+  </div>
+  <div class="container-tabel">
+    <div class="cari-group">
+      <label for="cari">Cari:</label>
+      <input type="text" name="cari" id="cari">
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Judul Film</th>
+          <th>Gambar Film</th>
+          <th>Kategori Film</th>
+          <th>Trailer Film</th>
+          <th>Batasan Umur</th>
+          <th>Sinopsis Film</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</body>
+
 </html>
