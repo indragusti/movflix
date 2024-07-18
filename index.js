@@ -64,19 +64,21 @@ function render(arrayDataFilm) {
     for (let i = 0; i < arrayDataFilm.length; i++) {
         let perData = arrayDataFilm[i]
         document.getElementById('tabelListFilm').innerHTML += `<tr>
-          <td>${perData.judul}</td>
-          <td><img src="${perData.poster}" alt=""></td>
-          <td>${perData.kategori}</td>
-          <td><a href="${perData.trailer}">Trailer</a></td>
-          <td>${perData.batasanUmur}</td>
-          <td>${perData.sinopsis}</td>
-          <td><div onclick="edit(${perData.id})">href=""</div onclick="edit(${perData.id}"><div>href=""</div></td>
-          </tr>`;
+
+        <td>${perData.judul}</td>
+        <td><img src="${perData.poster}" alt=""></td>
+        <td>${perData.kategori}</td>
+        <td><a href="${perData.trailer}" target="#">Trailer</a></td>
+        <td>${perData.batasanUmur}</td>
+        <td>${perData.sinopsis}</td>
+        <td><button onclick="edit(${perData.id})">edit</button><button onclick="hapus(${perData.id})">hapus</button></td>
+        </tr>`;
     }
 }
 
 let button = document.getElementById("tombolTambah");
-button.addEventListener("click", tambah() );
+
+button.addEventListener("click", tambah );
 
 function clear() {
     document.getElementById("linkGambar").value = ""
@@ -89,9 +91,20 @@ function clear() {
 
 render(dataFilm)
 function tambah() {
-// masukin film ke arraydatafil
+
+// masukin film ke arraydatafill
+    let id = 1
+
+    for ( let i = 0; i < dataFilm.length; i++) {
+        if (id === dataFilm[i].id) {
+            id++
+        } else {
+            break
+        }
+    }
     
     let obj = {
+        id: id,
         poster:document.getElementById("linkGambar").value,
         judul:document.getElementById("judulFilm").value,
         kategori:document.getElementById("kategoriFilm").value,
@@ -99,28 +112,97 @@ function tambah() {
         batasanUmur:document.getElementById("batasanUmur").value,
         sinopsis:document.getElementById("sinopsisFilm").value
     }
-    dataFilm.push(obj)
-    console.log(dataFilm);
-
+    
+    if (!obj.judul || !obj.poster || !obj.kategori || !obj.trailer || !obj.batasanUmur || !obj.sinopsis) {
+        alert("WAJIB DI ISI SEMUA")
+    } else {
+        dataFilm.push(obj)
+    }
+    
     clear()
+    render(dataFilm)
 }
+let idSekarang = 0
+
+// let berubah = document.getElementById("tombolUpdate");
+// berubah.addEventListener("click", update(idSekarang) );
+
+
+function update(idSekarang) {
+// dari value input, menjiplak obj yg sedang diedit sesuai id
+    document.getElementById("tombolTambah").style.display = "block"
+    document.getElementById("tombolUpdate").style.display = "none"
+    
+    for ( let i = 0; i < dataFilm.length; i++) {
+        let iData = dataFilm[i]
+        
+        if(iData.id === idSekarang) {
+            iData.poster=document.getElementById("linkGambar").value,
+            iData.judul=document.getElementById("judulFilm").value,
+            iData.kategori=document.getElementById("kategoriFilm").value,
+            iData.trailer=document.getElementById("trailerFilm").value,
+            iData.batasanUmur=document.getElementById("batasanUmur").value,
+            iData.sinopsis=document.getElementById("sinopsisFilm").value
+            break
+        }
+        // console.log(iData.id, idSekarang, " <<<<< ")
+    }
+    clear()
+    render(dataFilm)
 
 function update() {
 // dari value input, menjiplak obj yg sedang diedit sesuai id
 }
 
+
+let mencari = document.getElementById("cari");
+mencari.addEventListener('keyup', cari )
+
 function cari() {
 // filter string di input cari di arrydatafilm 
+    let diCari = document.getElementById("cari").value
+    let sementara = []
+
+    for ( let i = 0; i < dataFilm.length; i++) {
+        let obj = dataFilm[i]
+
+        if (obj.judul.toLowerCase().includes(diCari.toLowerCase()) || 
+            obj.kategori.toLowerCase().includes(diCari.toLowerCase()) || 
+            obj.sinopsis.toLowerCase().includes(diCari.toLowerCase()) ||
+            String(obj.batasanUmur).toLowerCase().includes(String(diCari).toLowerCase())) {
+            sementara.push(obj)
+        }
+    }
+    render(sementara)
 }
 
-function hapus() {
+
+function hapus(del) {
 // menghapus obj dimana icon hapus ssuai id
+    dataFilm.splice(del-1,1)
+    render(dataFilm)
 }
 
-function edit() {
+function edit(id) {
 // menampilkan obj ke value input 
+    document.getElementById("tombolTambah").style.display = "none"
+    document.getElementById("tombolUpdate").style.display = "block"
+    
+    for ( let i = 0; i < dataFilm.length; i++) {
+        let iData = dataFilm[i]
 
+        if(iData.id === id){
+            document.getElementById("judulFilm").value = iData.judul
+            document.getElementById("kategoriFilm").value = iData.kategori
+            document.getElementById("trailerFilm").value = iData.trailer
+            document.getElementById("batasanUmur").value = iData.batasanUmur
+            document.getElementById("sinopsisFilm").value = iData.sinopsis
+            document.getElementById("linkGambar").value = iData.poster
+            idSekarang = id
+            break
+        }
+    }
+    
 }
 
 // data-faather
-
