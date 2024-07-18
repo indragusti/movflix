@@ -42,3 +42,29 @@ let dataFilm = [
     }
 
 ]
+// localStorage.setItem('dataFilmMovlix', JSON.stringify(dataFilm));
+// const userData = localStorage.getItem('dataFilmMovlix');
+
+function render(arrayDataFilm) {
+    for (let i = 0; i < arrayDataFilm.length; i++) {
+        let perData = arrayDataFilm[i]
+        document.getElementById('tabelListFilm').innerHTML += `<tr>
+          <td>${perData.judul}</td>
+          <td><img src="${perData.poster}" alt=""></td>
+          <td>${perData.kategori}</td>
+          <td><a href="${perData.trailer}">Trailer</a></td>
+          <td>${perData.batasanUmur}</td>
+          <td>${perData.sinopsis}</td>
+          </tr>`;
+    }
+}
+render(dataFilm)
+function tambah() {
+
+}
+function update() {
+
+}
+function cari() {
+
+}

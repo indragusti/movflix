@@ -35,8 +35,8 @@ table th {
   display: flex;
   margin-bottom: 10px;
   align-items: center;
-  border: black 1px;
-  border-style: solid;
+  /* border: black 1px;
+  border-style: solid; */
 }
 
 label {
@@ -57,6 +57,7 @@ input[type="number"] {
 
 .cari-group{
   text-align: left;
+  margin-bottom: 5px;
 }
 
 .container-tabel {
@@ -70,4 +71,20 @@ input[type="number"] {
 
 table{
   width: 100%;
+  border-collapse: collapse;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+th, td{
+  border-collapse: collapse;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+table tbody img{
+  width: 100px;
+  margin: 5px;
 }
