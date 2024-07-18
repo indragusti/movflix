@@ -1,19 +1,27 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  /* margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
 }
 
 body {
   text-align: center;
+  background: url("./img/bg-body.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1 {
   font-family: "Poppins", sans-serif;
-  font-size: 2rem;
+  font-size: 4rem;
   align-items: center;
+  font-style: italic;
+  color: white;
 }
-
+h1 span {
+  color: rgb(255, 0, 0);
+}
 table th {
   border-style: solid;
   border-color: black;
@@ -23,51 +31,79 @@ table th {
 }
 
 .container-input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   border-style: solid;
   border-color: black;
   border-width: 2px;
+  border-radius: 20px;
   max-width: 800px;
-  margin: auto;
-}
-
-.container-tabel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
-  max-width: 80%;
-  margin: auto;
+  margin: 0 auto 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .input-group {
   display: flex;
-  padding: 10px;
-  margin: 2px;
+  margin-bottom: 10px;
   align-items: center;
-  justify-content: space-evenly;
-  width: 500px;
-  border: black 1px;
-  border-style: solid;
+  /* border: black 1px;
+    border-style: solid; */
 }
 
 label {
   flex: 1;
-  max-width: 50%;
-  padding: 0 25px;
   margin-right: 10px;
   text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
 }
 
 input[type="text"],
 input[type="number"] {
   flex: 2;
-  width: 800px;
-  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+.tombol-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cari-group {
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.container-tabel {
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+th,
+td {
+  border-collapse: collapse;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+}
+
+table tbody img {
+  width: 100px;
+  margin: 5px;
 }
