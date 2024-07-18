@@ -180,3 +180,8 @@ tbody button{
   outline-style: solid;
   box-shadow: 0 0 0 4px green;
 }
+
+#filmKosong{
+  margin: 20px;
+  padding: 20px;
+}
