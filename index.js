@@ -74,16 +74,17 @@ function render(arrayDataFilm) {
         <td>${perData.batasanUmur}</td>
         <td>${perData.sinopsis}</td>
         <td><button onclick="edit(${perData.id})" id="edit-2"><i data-feather="edit-2"></i></button>
-        <button onclick="hapus(${perData.id})" id="trash-2"><i data-feather="trash-2"></i></button></td>
+        <button onclick="hapus(this)" id="trash-2" data-index="${i}"><i data-feather="trash-2"></i></button></td>
         </tr>`;
     }
     feather.replace()
     localStorage.setItem('dataFilmMovlix', JSON.stringify(dataFilm));
-    // if (!arrayDataFilm) {
-    //     document.getElementById("filmKosong").style.display = "block"
-    // }
+    console.log(arrayDataFilm);
+    if (arrayDataFilm.length===0) {
+        document.getElementById("filmKosong").style.display = "block"
+    }
 }
-if (userData === null) {
+if (userData === null||userData.length===0) {
     render(dataFilm)
 } else {
     dataFilm = userData
@@ -176,10 +177,13 @@ function cari() {
 }
 
 
-function hapus(del) {
+function hapus(baris) {
     // menghapus obj dimana icon hapus ssuai id
+    const index = baris.getAttribute('data-index');
+    
+    // Remove the item from the dataFilm array
+    dataFilm.splice(index, 1);
 
-    dataFilm.splice(del - 1, 1)
     if (dataFilm.length === 0) {
         dataFilm = []
     }
