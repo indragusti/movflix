@@ -55,23 +55,72 @@ let dataFilm = [
       "Keluarga miskin yang licik secara bertahap menyusup ke dalam kehidupan keluarga kaya dengan konsekuensi yang tak terduga.",
   },
 ];
+
 // localStorage.setItem('dataFilmMovlix', JSON.stringify(dataFilm));
 // const userData = localStorage.getItem('dataFilmMovlix');
 
 function render(arrayDataFilm) {
-  for (let i = 0; i < arrayDataFilm.length; i++) {
-    let perData = arrayDataFilm[i];
-    document.getElementById("tabelListFilm").innerHTML += `<tr>
-            <td>${perData.judul}</td>
-            <td><img src="${perData.poster}" alt=""></td>
-            <td>${perData.kategori}</td>
-            <td><a href="${perData.trailer}">Trailer</a></td>
-            <td>${perData.batasanUmur}</td>
-            <td>${perData.sinopsis}</td>
-            </tr>`;
-  }
+    document.getElementById('tabelListFilm').innerHTML = ""
+    for (let i = 0; i < arrayDataFilm.length; i++) {
+        let perData = arrayDataFilm[i]
+        document.getElementById('tabelListFilm').innerHTML += `<tr>
+          <td>${perData.judul}</td>
+          <td><img src="${perData.poster}" alt=""></td>
+          <td>${perData.kategori}</td>
+          <td><a href="${perData.trailer}">Trailer</a></td>
+          <td>${perData.batasanUmur}</td>
+          <td>${perData.sinopsis}</td>
+          <td><div onclick="edit(${perData.id})">href=""</div onclick="edit(${perData.id}"><div>href=""</div></td>
+          </tr>`;
+    }
 }
-render(dataFilm);
-function tambah() {}
-function update() {}
-function cari() {}
+
+let button = document.getElementById("tombolTambah");
+button.addEventListener("click", tambah() );
+
+function clear() {
+    document.getElementById("linkGambar").value = ""
+    document.getElementById("judulFilm").value = ""
+    document.getElementById("kategoriFilm").value = ""
+    document.getElementById("trailerFilm").value = ""
+    document.getElementById("batasanUmur").value = ""
+    document.getElementById("sinopsisFilm").value = ""
+}
+
+render(dataFilm)
+function tambah() {
+// masukin film ke arraydatafil
+    
+    let obj = {
+        poster:document.getElementById("linkGambar").value,
+        judul:document.getElementById("judulFilm").value,
+        kategori:document.getElementById("kategoriFilm").value,
+        trailer:document.getElementById("trailerFilm").value,
+        batasanUmur:document.getElementById("batasanUmur").value,
+        sinopsis:document.getElementById("sinopsisFilm").value
+    }
+    dataFilm.push(obj)
+    console.log(dataFilm);
+
+    clear()
+}
+
+function update() {
+// dari value input, menjiplak obj yg sedang diedit sesuai id
+}
+
+function cari() {
+// filter string di input cari di arrydatafilm 
+}
+
+function hapus() {
+// menghapus obj dimana icon hapus ssuai id
+}
+
+function edit() {
+// menampilkan obj ke value input 
+
+}
+
+// data-faather
+
