@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MOVLIX</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
 
 <head>
   <meta charset="UTF-8" />
@@ -22,90 +11,19 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-    <!-- Feather Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
-  </head>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
-
-  <body>
-    <h1 center>Welcome to <span>Movlix</span></h1>
-    <div class="container-input">
-      <div class="input-group">
-        <label for="judulFilm">Judul Film</label>
-        <input type="text" name="judulFilm" id="judulFilm" />
-      </div>
-      <div class="input-group">
-        <label for="kategoriFilm">Kategori Film</label>
-        <input type="text" name="kategoriFilm" id="kategoriFilm" />
-      </div>
-      <div class="input-group">
-        <label for="trailerFilm">Trailer</label>
-        <input type="text" name="trailerFilm" id="trailerFilm" />
-      </div>
-      <div class="input-group">
-        <label for="batasanUmur">Batasan Umur</label>
-        <input type="number" name="batasanUmur" id="batasanUmur" />
-      </div>
-      <div class="input-group">
-        <label for="sinopsisFilm">Sinopsis</label>
-        <input type="text" name="sinopsisFilm" id="sinopsisFilm" />
-      </div>
-      <div class="input-group">
-        <label for="linkGambar">Link Gambar</label>
-        <input type="text" name="linkGambar" id="linkGambar" />
-      </div>
-      <div class="tombol-group">
-        <button id="tombolTambah">Tambah</button>
-        <button style="display: none" id="tombolUpdate">Update</button>
-      </div>
+<body>
+  <h1 center>Welcome to <span>Movlix</span></h1>
+  <div class="container-input">
+    <div class="input-group">
+      <label for="judulFilm">Judul Film</label>
+      <input type="text" name="judulFilm" id="judulFilm" />
     </div>
-    <div class="container-tabel">
-      <div class="cari-group">
-        <label for="cari">Cari:</label>
-        <input type="text" name="cari" id="cari" />
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Judul Film</th>
-            <th>Gambar Film</th>
-            <th>Kategori Film</th>
-            <th>Trailer Film</th>
-            <th>Batasan Umur</th>
-            <th>Sinopsis Film</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody id="tabelListFilm">
-          <tr>
-            <td>Judulnyaa..</td>
-            <td><img src="./img/bg-body.jpg" alt="judulFilm" /></td>
-            <td>Horor</td>
-            <td>
-              <a href="https://www.youtube.com/watch?v=Ay8BXbAmEYM&t=566s">
-                <a
-                  href="https://www.youtube.com/watch?v=Ay8BXbAmEYM&t=566s"
-                  id="youtube"
-                >
-                  <i data-feather="youtube"></i
-                ></a>
-              </a>
-            </td>
-            <td>15+</td>
-            <td>Film yang sangat Menyeramkan</td>
-            <td>
-              <a href="index.html" id="edit-2">
-                <i data-feather="edit-2"></i
-              ></a>
-              <a href="index.html" id="trash-2">
-                <i data-feather="trash-2"></i
-              ></a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="input-group">
+      <label for="kategoriFilm">Kategori Film</label>
+      <input type="text" name="kategoriFilm" id="kategoriFilm" />
     </div>
-
     <div class="input-group">
       <label for="trailerFilm">Trailer</label>
       <input type="text" name="trailerFilm" id="trailerFilm" />
@@ -125,6 +43,7 @@
     <div class="tombol-group">
       <button id="tombolTambah">Tambah</button>
       <button style="display: none" id="tombolUpdate" onclick="update(idSekarang)">Update</button>
+      <button style="display: none" id="tombolCancel" onclick="cancel()">Cancel</button>
     </div>
   </div>
   <div class="container-tabel">
@@ -141,19 +60,15 @@
           <th>Trailer Film</th>
           <th>Batasan Umur</th>
           <th>Sinopsis Film</th>
-          <th>Optional</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody id="tabelListFilm">
+        <!-- <div id="filmKosong" style="display: none;">Belum Ada Film</div> -->
       </tbody>
     </table>
   </div>
   <script src="index.js"></script>
+  <script>feather.replace()</script>
 </body>
-
-    <!-- Feather Icons -->
-    <script>
-      feather.replace();
-    </script>
-  </body>
 </html>
