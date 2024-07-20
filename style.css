@@ -220,12 +220,13 @@ button:hover:focus {
 .card-content {
   padding: 15px;
   flex: 1;
+  font-size: 0.8em;
 }
 
 .card-content h3 {
   margin-top: 0;
   margin-bottom: 10px;
-  font-size: 1.25em;
+  font-size: 0.8em;
 }
 
 .card-content p {
