@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
+
 <body>
   <h1 center>Welcome to <span>Movlix</span></h1>
   <div class="container-input">
@@ -51,7 +52,7 @@
       <label for="Cari">Cari</label>
       <input type="text" name="cari" id="cari">
     </div>
-    <table>
+    <!-- <table>
       <thead>
         <tr>
           <th>Judul Film</th>
@@ -65,10 +66,21 @@
       </thead>
       <tbody id="tabelListFilm">
       </tbody>
-    </table>
-    <div id="filmKosong" style="display: none;">Belum Ada Film</div>
+    </table> -->
+    <div id="tabelListFilm">
+      <div id="filmKosong" style="display: none;">Belum Ada Film</div>
+    </div>
   </div>
+  <div id="confirmationPopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <h2>Apakah Anda yakin?</h2>
+        <p>Anda tidak dapat mengembalikan ini!</p>
+        <button id="confirmDelete">Ya</button>
+        <button id="cancelDelete">Batal</button>
+    </div>
+</div>
   <script src="index.js"></script>
   <script>feather.replace()</script>
 </body>
+
 </html>
