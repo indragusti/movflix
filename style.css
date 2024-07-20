@@ -10,6 +10,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -93,7 +94,7 @@ input[type="number"]:hover {
   border-color: transparent;
   border-width: 2px;
   border-radius: 20px;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto 20px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.6);
@@ -149,9 +150,9 @@ button:hover:focus {
   box-shadow: 0 0 0 4px green;
 }
 
-tbody button{
+/* tbody button {
   width: 40px;
-}
+} */
 
 /* Button Cari */
 
@@ -181,7 +182,138 @@ tbody button{
   box-shadow: 0 0 0 4px green;
 }
 
-#filmKosong{
+#filmKosong {
   margin: 20px;
   padding: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  margin: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(204, 204, 204, 0.5);
+  position: relative;
+  padding-bottom: 50px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  flex: 1;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.25em;
+}
+
+.card-content p {
+  margin: 5px 0;
+}
+
+.trailer-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.trailer-link:hover {
+  text-decoration: underline;
+}
+
+.card-actions {
+  /* margin-top: 15px; */
+  margin-bottom: 20px;
+  padding: auto;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding: 10px 15px; */
+  bottom: 0;
+  position: absolute;
+  left: 19%;
+}
+
+.delete-button {
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1.2em;
+  background-color: red;
+}
+
+.delete-button:hover {
+  color: darkred;
+}
+
+#tabelListFilm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+#tabelListFilm h1{
+  color: black;
+  font-style: normal;
+}
+
+/* Pop-up Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#confirmDelete {
+  background-color: #d33;
+  color: white;
+}
+
+#cancelDelete {
+  background-color: #3085d6;
+  color: white;
 }
